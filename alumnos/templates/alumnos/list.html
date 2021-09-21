@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de alumnos</title>
+</head>
+<body>
+    <p>Lista actualizada</p>
+    <ul>
+        {% for alumno in alumnos_lista %}
+            <li>
+                <a href="{% url 'alumnos:detail' alumno.id %}">
+                    {{ alumno.nombre }} {{ alumno.apellido}}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
+    <form method="POST" action="/alumnos/">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" placeholder="Ej. Alicia">
+        </div>
+        <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input type="text" class="form-control" name="apellido" placeholder="Ej. Luvila">
+        </div>
+        <div class="form-group">
+            <label for="carrera">Carrera</label>
+            <input type="text" class="form-control" name="carrera" placeholder="Ej. Psicología">
+        </div>
+        <div class="form-group">
+            <label for="correo">Correo</label>
+            <input type="text" class="form-control" name="correo" placeholder="Ej. aluvila10@email.com">
+        </div>
+        <div class="text-right">
+            <button type="submit" class="btn">Agregar alumno</button>
+        </div>
+    </form>
+</body>
+</html>
