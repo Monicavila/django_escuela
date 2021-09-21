@@ -4,18 +4,22 @@ Crear una aplicación para estudiantes que contenga un modelo Estudiante, una vi
 
 PARA COMENZAR
 
-- Para generar tu SECRET_KEY, ejecuta:
+- Genera tu SECRET_KEY, ejecuta:
     python generator_django.py
 
 Abre en la carpeta Biblioteca Settings.py, linea 23 y pega tu SECRET_KEY entre las ''.
 
-- Para generar tu contraseña y usuario, ejecuta:
+- Crea un superusuario, ejecuta:
 
    python manage.py createsuperuser
 
 Ingresa un Username, email adress y un password
 
-URLS y Endpoints
+Abre el siguinete link para ingresar a la app.
+
+http://127.0.0.1:8000/admin/
+
+# URLS y Endpoints
 
 Request Method: 	GET
 Request URL: 	http://127.0.0.1:8000/
@@ -28,5 +32,3 @@ Using the URLconf defined in biblioteca.urls, Django tried these URL patterns, i
     facultades/
     profesores/
     api-auth
-
-The empty path didn't match any of these.
